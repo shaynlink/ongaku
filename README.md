@@ -1,18 +1,18 @@
 # Ongaku
-Onkagu est une librairie de multiple outil pour créer / manager / automatiser vos noeuds, ainsi vous pouvez votre propre serveur de musique privée à partire d'une API ou implémenter dans votre code.
+Onkagu is a library of several tools to create / manage / automate your nodes, so you can your own private music server from an API or implement in your code.
 
 # Installation
-avec npm
+with npm
 ```bash
 npm install
 ```
-avec yarn
+wuth yarn
 ```bash
 yarn
 ```
 
 # Exemples
-Démarrer le serveur par défaut (port 1452)
+Start default server (port 1452)
 ```bash
 # with npm
 npm start
@@ -22,7 +22,7 @@ yarn start
 
 <img src="https://raw.githubusercontent.com/Shaynlink/ongaku/master/assets/images/loadRoute.png" />
 
-### routes du serveur par défaut
+### Default routes
 ```bash
 # index
 GET http://localhost:1452/
@@ -77,14 +77,14 @@ GET http://localhost:1452/node/:uuid/player
 
 <img src="https://raw.githubusercontent.com/Shaynlink/ongaku/master/assets/images/player.png" />
 
-Example de serveur
+Server example
 ```js
 'use strict';
 
 const {Client, content, routes} = require('ongaku');
 const client = new Client({
-    token: false, // Default, Vous pouvez ajouté un token, pour les requêtes via votre api avec le headers Authorization
-    host: '0.0.0.0', // Default, Authoriser la connexion via des requêtes externe du réseau
+    token: false, // Default, You can add token, for requests via your API with the Authorization headers
+    host: '0.0.0.0', // Default, Allow connection via external network requests
     port: '1452', // Default
     app: content, // Default express app
     route: routes, // Default
