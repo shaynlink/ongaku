@@ -20,7 +20,7 @@ npm start
 yarn start
 ```
 
-<img src="https://raw.githubusercontent.com/Shaynlikn/ongaku/master/assets/images/loadRoute.png" />
+<img src="https://raw.githubusercontent.com/Shaynlink/ongaku/master/assets/images/loadRoute.png" />
 
 ### routes du serveur par défaut
 ```bash
@@ -71,11 +71,11 @@ GET http://localhost:1452/node/:uuid/player
     query -> type = stream encoding
 ```
 
-<img src="https://raw.githubusercontent.com/Shaynlikn/ongaku/master/assets/images/node.png" />
+<img src="https://raw.githubusercontent.com/Shaynlink/ongaku/master/assets/images/node.png" />
 
-<img src="https://raw.githubusercontent.com/Shaynlikn/ongaku/master/assets/images/addQueue.png" />
+<img src="https://raw.githubusercontent.com/Shaynlink/ongaku/master/assets/images/addQueue.png" />
 
-<img src="https://raw.githubusercontent.com/Shaynlikn/ongaku/master/assets/images/player.png" />
+<img src="https://raw.githubusercontent.com/Shaynlink/ongaku/master/assets/images/player.png" />
 
 Example de serveur
 ```js
@@ -126,6 +126,6 @@ node ./test/discordjs.test.js
 | queue      | Display 5 first songs         |
 | nowplaying | Display info of actually song |
 
-<img src="https://raw.githubusercontent.com/Shaynlikn/ongaku/master/assets/images/queue.png" />
+<img src="https://raw.githubusercontent.com/Shaynlink/ongaku/master/assets/images/Queue.png" />
 
-<img src="https://raw.githubusercontent.com/Shaynlikn/ongaku/master/assets/images/nowplaying.png" />
+<img src="https://raw.githubusercontent.com/Shaynlink/ongaku/master/assets/images/nowplaying.png" />
