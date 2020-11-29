@@ -48,7 +48,7 @@ client.on('message', async (message) => {
     const node = onga.createNode(uuid, false);
     // Join channel
     const connection = await message.member.voice.channel.join();
-    // Create guild music obbject
+    // Create guild music object
     const music = {
       node: node,
       connection: connection,
@@ -166,7 +166,7 @@ client.on('message', async (message) => {
       // Check if has dispatcher else destroy
       if (Boolean(music.dispatcher)) music.dispatcher.destroy();
       // Check if ha connected else leave
-      if (Boolean(music.connection)) music.connection.leave();
+      if (Boolean(music.connection)) music.connection.disconnect();
       // Delete music
       musics.delete(message.guild.id);
     };
