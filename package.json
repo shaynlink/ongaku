@@ -1,0 +1,30 @@
+{
+  "name": "ongaku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "./typings/index.d.ts",
+  "scripts": {
+    "start": "node ./scripts/default"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/collection": "^0.1.6",
+    "@discordjs/opus": "^0.3.3",
+    "cors": "^2.8.5",
+    "discord.js": "^12.5.1",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "prism-media": "^1.2.2",
+    "ytdl-core": "^4.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.6"
+  },
+  "optionalDependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
