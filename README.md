@@ -31,7 +31,9 @@ GET http://localhost:1452/
 GET http://localhost:1452/node/create
 
 # Delete node
-DELETE http://localhost:1452/node/delete
+DELETE http://localhost:1452/node/:uuid
+
+    params -> :uuid = node uuid
 
 # Node info
 GET http://localhost:1452/node/:uuid
