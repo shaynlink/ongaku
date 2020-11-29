@@ -12,11 +12,13 @@ class Opus {
    */
   constructor(data, {channels = 2, rate = 48000, frameSize = 690} = {}) {
     /**
+     * Stream
      * @type {stream.Readable}
      */
     this.data = data;
 
     /**
+     * Opus options
      * @type {OpusOptions}
      */
     this.options = {channels, rate, frameSize};
@@ -26,6 +28,10 @@ class Opus {
    * Stream pipe
    * @param {OpusOptions} options - Opus options
    * @return {stream.Readable}
+   * @example
+   * pipe();
+   * @example
+   * pipe({channels: 2, rate: 48e3, frameSize: 690});
    */
   pipe(options = this.options) {
     return this.data.pipe(new prism.opus.Encoder(options));

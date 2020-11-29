@@ -6,6 +6,7 @@
 class Util {
   /**
    * Create UUID
+   * @static
    * @return {string}
    */
   static createUUID() {
@@ -24,8 +25,11 @@ class Util {
 
   /**
    * Verify youtube URL
+   * @static
    * @param {String} url - url
    * @return {Boolean}
+   * @example
+   * verifyYoutubeURL('youtbe video url');
    */
   static verifyYoutubeURL(url) {
     return /^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/

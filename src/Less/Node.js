@@ -16,19 +16,19 @@ class Node {
    */
   constructor(client, uuid) {
     /**
-     * Client
+     * Ongaku Client
      * @type {Client}
      */
     this.client = client;
 
     /**
-     * Node ID
+     * Node UUID
      * @type {string}
      */
     this.uuid = uuid;
 
     /**
-     * Musique queue
+     * Song collection
      * @type {Collection<string, Song>}
      */
     this.queue = new Collection();
@@ -40,7 +40,7 @@ class Node {
     this.hookID = 'hook_' + uuid;
 
     /**
-     * Player
+     * Node player
      * @type {?Player}
      */
     this.player;
@@ -65,6 +65,11 @@ class Node {
    * @param {stream.Readable} stream
    * @param {SongData} data - Sond data
    * @return {Song}
+   * @example
+   * addSong(ytdl('youtube url'), {
+   *  url: 'same url',
+   *  service: 'youtube',
+   * })
    */
   addSong(stream, data) {
     const song = new Song(this, Util.createUUID(), data, stream);
@@ -100,7 +105,7 @@ class Node {
   };
 
   /**
-   * Return JSON
+   * Return node object
    * @return {NodeData}
    */
   toJSON() {
@@ -112,9 +117,11 @@ class Node {
   };
 
   /**
-   * Create player
-   * @param {express.response} res - Response
+   * Create player (only for API)
+   * @param {express.response} res - API response
    * @return {Player}
+   * @example
+   * createPlayer(res);
    */
   createPlayer(res) {
     return this.player = new Player(this, res);

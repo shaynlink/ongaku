@@ -3,6 +3,18 @@
 const {getBasicInfo} = require('ytdl-core');
 
 /**
+ * @typedef SongData
+ *
+ * @property {} title: this.title,
+ * @property {} author: this.author,
+ * @property {} cover: this.cover,
+ * @property {} description: this.description,
+ * @property {} formats: this.formats,
+ * @property {} service: this.service,
+ * @property {} url: this.url,
+ */
+
+/**
  * class Song
  */
 class Song {
@@ -14,61 +26,73 @@ class Song {
    */
   constructor(node, uuid, data, stream) {
     /**
+     * Node
      * @type {Node}
      */
     this.node = node;
 
     /**
+     * Ongaku client
      * @type {Client}
      */
     this.client = node.client;
 
     /**
+     * Song UUID
      * @type {String}
      */
     this.uuid = uuid;
 
     /**
+     * Stream
      * @type {stream.Readable}
      */
     this.stream = stream;
 
     /**
+     * Song title
      * @type {?String}
      */
     this.title = data.title;
 
     /**
+     * Song author
      * @type {?String}
      */
     this.author = data.author;
 
     /**
+     * Song cover
      * @type {?String}
      */
     this.cover = data.cover;
 
     /**
+     * Song description
      * @type {?String}
      */
     this.description = data.description;
 
     /**
+     * Stream formats
      * @type {?ytdl.videoFormat[]}
      */
     this.formats = data.formats;
 
     /**
+     * Stream mimeType formats
      * @type {?String[]}
      */
     this.availableFormats = data.availableFormats;
 
     /**
+     * Stream service
      * @type {?String}
      */
     this.service = data.service;
 
     /**
+     * Song url
      * @type {?String}
      */
     this.url = data.url;
@@ -86,6 +110,10 @@ class Song {
    * Fill information
    * @param {?String} url - Stream url
    * @return {Promise<Song>}
+   * @example
+   * fillInfo();
+   * @example
+   * fillInfo('youtube video url');
    */
   fillInfo(url = this.url) {
     return new Promise(async (resolve) => {
@@ -106,8 +134,8 @@ class Song {
   };
 
   /**
-   * Return JSON
-   * @return {SongData}
+   * Return Song object
+   * @return {SongObject}
    */
   toJSON() {
     return {

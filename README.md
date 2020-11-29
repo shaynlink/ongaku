@@ -4,11 +4,11 @@ Onkagu is a library of several tools to create / manage / automate your nodes, s
 # Installation
 with npm
 ```bash
-npm install
+npm install Shaynlink/ongaku
 ```
 wuth yarn
 ```bash
-yarn
+yarn Shaynlink/ongaku
 ```
 
 # Exemples

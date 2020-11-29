@@ -5,7 +5,9 @@
   "main": "index.js",
   "types": "./typings/index.d.ts",
   "scripts": {
-    "start": "node ./scripts/default"
+    "start": "node ./scripts/default",
+    "docs:create": "node ./scripts/docs.js",
+    "docs:start": "docma serve ./docs"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +22,7 @@
     "ytdl-core": "^4.0.6"
   },
   "devDependencies": {
+    "docma": "^3.2.2",
     "eslint": "^7.14.0",
     "eslint-config-google": "^0.14.0",
     "nodemon": "^2.0.6"

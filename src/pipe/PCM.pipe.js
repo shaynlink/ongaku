@@ -20,11 +20,13 @@ class PCM {
    */
   constructor(data, args = FFMPEG_ARGUMENTS) {
     /**
+     * Stream
      * @type {stream.Readable}
      */
     this.data = data;
 
     /**
+     * FFMPEG args
      * @type {PCMArgs}
      */
     this.args = args;
@@ -34,6 +36,16 @@ class PCM {
    * Pipe stream
    * @param {PCMArgs} args - FFMPEG args
    * @return {stream.Readable}
+   * @example
+   * pipe();
+   * @example
+   * pipe([
+   *  '-analyzeduration', '0',
+   *  '-loglevel', '0',
+   *  '-f', 's16le',
+   *  '-ar', '48000',
+   *  '-ac', '2',
+   * ]);
    */
   pipe(args = this.args) {
     return this.data.pipe(new prism.FFmpeg({args}));

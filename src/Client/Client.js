@@ -4,10 +4,21 @@ const {EventEmitter} = require('events');
 const Rest = require('./../Server/Rest');
 const Collection = require('@discordjs/collection');
 const Node = require('./../Less/Node');
+const content = require('./../content');
+const routes = require('./../routes');
+
+/**
+ * @typedef ClientOptions
+ *
+ * @property {?Boolean} [token=false] - API token
+ * @property {?String} [host="0.0.0.0"] - API host
+ * @property {?String} [port="1452"] - API port
+ * @property {?express.Application} [app=content] - API app
+ * @property {?routes} [routes=routes] - API routes
+ */
 
 /**
  * Class Client
- * @extends EventEmitter
  */
 class Client extends EventEmitter {
   /**
@@ -17,22 +28,25 @@ class Client extends EventEmitter {
     token = false,
     host = '0.0.0.0',
     port = '1452',
-    app = require('./../content'),
-    route = require('./../routes'),
+    app = content,
+    route = routes,
   } = {}) {
     super();
 
     /**
+     * Server API
      * @type {Rest}
      */
     this.rest = new Rest(this, {app, route, host, port});
 
     /**
+     * Client options
      * @type {ClientOptions}
      */
     this.options = {token, host, port, app, route};
 
     /**
+     * Node collection
      * @type {Collection<String, Node>}
      */
     this.nodes = new Collection();
@@ -41,7 +55,7 @@ class Client extends EventEmitter {
   /**
    * Create node
    * @param {String} uuid - UUID
-   * @param {Boolean} cache - Save node
+   * @param {?Boolean} [cache=true] - Save node
    * @return {Node}
    */
   createNode(uuid, cache = true) {

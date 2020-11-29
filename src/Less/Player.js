@@ -10,24 +10,28 @@ const PCMPipe = require('../pipe/PCM.pipe');
 class Player {
   /**
    * @param {Node} node - Node
-   * @param {express.Response} res - Response
+   * @param {express.Response} res - API response
    */
   constructor(node, res) {
     /**
+     * Node
      * @type {Node}
      */
     this.node = node;
 
     /**
+     * Ongaku client
      * @type {Client}
      */
     this.client = node.client;
 
     /**
+     * API response
      * @type {express.Response}
      */
     this.res = res;
 
+    // Set Transfer-Encoding to chunked
     this.res.setHeader('Transfer-Encoding', 'chunked');
   };
 
@@ -53,6 +57,8 @@ class Player {
    * @param {TypeEncode} type - Encoding type
    * @param {stream.Readable} song - Stream readable
    * @return {void}
+   * @example
+   * node.player.youtubePacket('video/mp4', node.queue.first().song);
    */
   youtubePacket(type, song) {
     if (!type || type == 'unknow') {
@@ -121,6 +127,8 @@ class Player {
    * Write packet
    * @param {Buffer} packet - Buffer packet
    * @return {void}
+   * @example
+   * send(Buffer.from('Hello world'));
    */
   send(packet) {
     this.client.emit('debug', 'Send packet', packet);

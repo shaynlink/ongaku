@@ -12,22 +12,26 @@ class Rest {
    */
   constructor(client, {app, route, host, port} = {}) {
     /**
+     * Client
      * @type {Client}
      */
     this.client = client;
 
     /**
+     * Server options
      * @type {RestOptions}
      */
     this.options = {app, route, host, port};
 
     /**
+     * API app
      * @type {express.Application}
      */
     this.app = app;
 
     /**
-     * @type {http.Server}
+     * Http server
+     * @type {?http.Server}
      */
     this.server;
   };
@@ -35,6 +39,7 @@ class Rest {
   /**
    * Create server
    * @return {Server}
+   * @emits debug
    */
   createServer() {
     return this.server = http.createServer(

@@ -64,6 +64,10 @@ declare module 'ongaku' {
     url: ?string;
   };
 
+  export interface SongObject extends NodeData {
+    uuid: String;
+  };
+
   export class Node {
     constructor(client: Client, uuid: String);
 
@@ -113,7 +117,7 @@ declare module 'ongaku' {
 
     public delete(): void;
     public fillInfo(url: ?String): Promise<Song>;
-    public toJSON(): SongData;
+    public toJSON(): SongObject;
   };
 
   export function authentification(client: Client, req: Request, res: Response): MiddlewareRes;
