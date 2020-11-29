@@ -6,7 +6,7 @@ with npm
 ```bash
 npm install Shaynlink/ongaku
 ```
-wuth yarn
+with yarn
 ```bash
 yarn Shaynlink/ongaku
 ```
