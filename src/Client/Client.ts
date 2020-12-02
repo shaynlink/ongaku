@@ -65,7 +65,7 @@ class Client extends EventEmitter {
     port = '1452',
     app = content,
     route = routes as Route,
-  }: ClientOptions = {} || null) {
+  }: ClientOptions = {}) {
     super();
 
     /**

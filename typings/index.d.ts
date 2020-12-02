@@ -27,15 +27,15 @@ declare module 'ongaku' {
   }
 
   export interface ClientOptions {
-    token: false;
-    host: '0.0.0.0';
-    port: '1452';
-    app: (client: Client, route: Route) => Express.Application;
-    route: Route;
+    token?: false;
+    host?: '0.0.0.0';
+    port?: '1452';
+    app?: (client: Client, route: Route) => Express.Application;
+    route?: Route;
   }
 
   export class Client extends EventEmitter {
-    constructor({}: ClientOptions);
+    constructor({}?: ClientOptions);
 
     public rest: Rest;
     public options: ClientOptions;
