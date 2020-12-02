@@ -7,7 +7,7 @@
   "scripts": {
     "start": "tsc && node ./scripts/default",
     "docs": "node ./scripts/docs",
-    "postinstall": "node ./scripts/install && tsc"
+    "install": "node ./scripts/install && tsc"
   },
   "author": "",
   "license": "ISC",
