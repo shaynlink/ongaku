@@ -1,7 +1,10 @@
 'use strict';
 
-const {Client} = require('../src');
-const client = new Client();
+const ongaku = require('../dist');
+
+console.log(ongaku);
+
+const client = new ongaku.Client();
 
 client.on('debug', console.log);
 

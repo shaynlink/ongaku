@@ -4,7 +4,7 @@
 'use strict';
 
 const discord = require('discord.js');
-const ongaku = require('./../src');
+const ongaku = require('./../dist');
 const client = new discord.Client();
 const onga = new ongaku.Client();
 const config = require('./config');

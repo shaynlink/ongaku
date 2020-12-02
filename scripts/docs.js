@@ -4,7 +4,7 @@ const Docma = require('docma');
 
 Docma.create().build({
   src: [
-    './src/**/*.js',
+    './src/**/*.ts',
   ],
   dest: './docs',
 }).catch(console.error).then(() => {
