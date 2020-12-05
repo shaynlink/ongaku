@@ -127,7 +127,7 @@ declare module 'ongaku' {
     frameSize: 690;
   }
 
-  export class Opus {
+  export class OpusPipe {
     constructor(data: Readable, {channels, rate, frameSize}: OpusOptions);
 
     public data: Readable;
@@ -138,7 +138,7 @@ declare module 'ongaku' {
 
   export type PCMArgs = ['-analyzeduration', '0', '-loglevel', '0', '-f', 's16le', '-ar', '48000', '-ac', '2'];
 
-  export class PCM {
+  export class PCMPipe {
     constructor(data: Readable, args: PCMArgs | string[]);
 
     public data: Readable;
@@ -152,7 +152,7 @@ declare module 'ongaku' {
     type: 's16le';
   }
 
-  export class Volume {
+  export class VolumePipe {
     constructor(data: Readable, options: VolumeOptions);
 
     public data: Readable;
